@@ -1,11 +1,25 @@
 def fact(n):
-	"""Computes the factorial of a natural number.
+    """Computes the factorial of a natural number.
 	
 	Pre: -
 	Post: Returns the factorial of 'n'.
 	Throws: ValueError if n < 0
 	"""
-	pass
+    x=1
+    if n>=0:
+        for i in range(1,n+1):
+            x=x*i
+        return x
+    else:
+        return ValueError
+	
+    
+    
+	
+    
+    
+    
+
 
 def roots(a, b, c):
 	"""Computes the roots of the ax^2 + bx + x = 0 polynomial.
