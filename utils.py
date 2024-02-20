@@ -22,13 +22,25 @@ def fact(n):
 
 
 def roots(a, b, c):
-	"""Computes the roots of the ax^2 + bx + x = 0 polynomial.
+    """Computes the roots of the ax^2 + bx + x = 0 polynomial.
 	
 	Pre: -
 	Post: Returns a tuple with zero, one or two elements corresponding
 		to the roots of the ax^2 + bx + c polynomial.
 	"""
-	pass
+    delta=b**2-4*a*c
+    if delta<0:
+        return ()
+    if delta==0:
+        r1=(-b+(delta)**(1/2))/(2*a)
+        return(r1)
+    else:
+        r1=(-b+(delta)**(1/2))/(2*a)
+        r2=(-b-(delta)**(1/2))/(2*a)
+        return (r1,r2)
+	
+    
+	
 
 def integrate(function, lower, upper):
 	"""Approximates the integral of a fonction between two bounds
