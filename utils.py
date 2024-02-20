@@ -1,3 +1,6 @@
+import scipy
+
+
 def fact(n):
     """Computes the factorial of a natural number.
 	
@@ -43,7 +46,7 @@ def roots(a, b, c):
 	
 
 def integrate(function, lower, upper):
-	"""Approximates the integral of a fonction between two bounds
+    """Approximates the integral of a fonction between two bounds
 	
 	Pre: 'function' is a valid Python expression with x as a variable,
 		'lower' <= 'upper',
@@ -55,9 +58,33 @@ def integrate(function, lower, upper):
 		you'll probably need the 'eval' function to evaluate the function
 		to integrate given as a string.
 	"""
-	pass
+    result=scipy.integrate.quad(lambda x:eval(function,{'x':x}),lower,upper)
+    return result[0]
+	
 
 if __name__ == '__main__':
 	print(fact(5))
 	print(roots(1, 0, 1))
 	print(integrate('x ** 2 - 1', -1, 1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
